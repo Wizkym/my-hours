@@ -5,7 +5,10 @@
         <h1>Welcome to {{ title }}
           <span><i class="fas fa-business-time"></i></span>
         </h1>
-        <h2>The email service that fits your needs!</h2>
+        <h2>Your favorite logging service!</h2>
+        <hr>
+        <p style="font-size: 18px;"><i>This service will help you send updates to your employer about various tasks<br>
+          you accomplished for the week.</i></p>
     </div>
   </div>
 </div>
@@ -13,7 +16,15 @@
 <div class="container">
   <div *ngIf="!isStarted" class="info">
       <p><a class="btn btn-primary btn-block" 
-        style="font-size: 25px"
-        role="button" (click)="onStartBtnClick()">Get Started</a></p>
+        style="font-size: 25px; color: white;"
+        role="button" (click)="openFormModal()">Get Started</a></p>
   </div>
+
+  <div *ngIf="isStarted" class="task-pane">
+    <h3>The Task Pane is Open</h3>
+  </div>
+</div>
+
+<div class="footer">
+  <!--<app-footer></app-footer>-->
 </div>

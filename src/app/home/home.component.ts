@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { AuthModalComponent } from '../auth-modal/auth-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +12,19 @@ export class HomeComponent implements OnInit {
   title = 'my-hours';
   isStarted = false;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
-  onStartBtnClick() {
-    this.isStarted = true;
+  openFormModal() {
+    const modalRef = this.modalService.open(AuthModalComponent, { centered: true });
+    modalRef.componentInstance.id = 10;
+    modalRef.result.then((result) => {
+      console.log(result);
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
 }

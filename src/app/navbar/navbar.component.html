@@ -1,13 +1,19 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a routerLink="/" class="navbar-brand"><b>MY-HOURS</b></a>
-        </div>
-    
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li routerLinkActive="active"><a routerLink="/home"><b>Home</b></a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a routerLink="/" class="navbar-brand"><span><i class="fas fa-business-time nav-ico"></i></span><b>MY-HOURS</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Pricing</a>
+            </li>
+        </ul>
     </div>
 </nav>
