@@ -1,0 +1,24 @@
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.jumbotron {
+    margin-top: 35px;
+    color: white;
+    background-color: transparent;
+}
+
+.head {
+    background:  url(../../assets/images/mailbox.jpg) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 75vh;
+}
+
+.info {
+    margin-top: 25px;
+    text-align: center;
+}
