@@ -1,7 +1,7 @@
+<app-navbar></app-navbar>
 <div class="head">
-  <app-navbar></app-navbar>
-  <div class="container">
-    <div class="jumbotron">
+  <div class="jumbotron">
+    <div class="container">
         <h1>Welcome to {{ title }}
           <span><i class="fas fa-business-time"></i></span>
         </h1>
@@ -11,7 +11,9 @@
 </div>
 
 <div class="container">
-  <div class="info">
-      <p><a class="btn btn-primary btn-block" style="font-size: 25px" href="#" role="button">Get Started</a></p>
+  <div *ngIf="!isStarted" class="info">
+      <p><a class="btn btn-primary btn-block" 
+        style="font-size: 25px"
+        role="button" (click)="onStartBtnClick()">Get Started</a></p>
   </div>
 </div>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'my-hours';
+  isStarted = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onStartBtnClick() {
+    this.isStarted = true;
   }
 
 }
