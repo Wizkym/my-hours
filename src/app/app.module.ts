@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    AuthModalComponent
+    AuthModalComponent,
+    JumbotronComponent
   ],
   imports: [
     BrowserModule,

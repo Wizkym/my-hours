@@ -9,7 +9,6 @@ import { AuthModalComponent } from '../auth-modal/auth-modal.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'my-hours';
   isStarted = false;
 
   constructor(private modalService: NgbModal) { }
@@ -21,7 +20,10 @@ export class HomeComponent implements OnInit {
     const modalRef = this.modalService.open(AuthModalComponent, { centered: true });
     modalRef.componentInstance.id = 10;
     modalRef.result.then((result) => {
-      console.log(result);
+      console.log(result.answer);
+      if (result.answer.trim().toLowerCase() === 'nairobi') {
+        this.isStarted = true;
+      }
     }).catch((error) => {
       console.log(error);
     });

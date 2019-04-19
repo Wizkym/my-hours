@@ -23,8 +23,7 @@ export class AuthModalComponent implements OnInit {
 
   private createForm() {
     this.myForm = this.formBuilder.group({
-      username: '',
-      password: ''
+      answer: ''
     });
   }
 

@@ -1,20 +1,10 @@
 <app-navbar></app-navbar>
 <div class="head">
-  <div class="jumbotron">
-    <div class="container">
-        <h1>Welcome to {{ title }}
-          <span><i class="fas fa-business-time"></i></span>
-        </h1>
-        <h2>Your favorite logging service!</h2>
-        <hr>
-        <p style="font-size: 18px;"><i>This service will help you send updates to your employer about various tasks<br>
-          you accomplished for the week.</i></p>
-    </div>
-  </div>
+ <app-jumbotron></app-jumbotron>
 </div>
 
 <div class="container">
-  <div *ngIf="!isStarted" class="info">
+  <div *ngIf="!isStarted" class="start">
       <p><a class="btn btn-primary btn-block" 
         style="font-size: 25px; color: white;"
         role="button" (click)="openFormModal()">Get Started</a></p>
