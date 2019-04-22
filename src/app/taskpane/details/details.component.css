@@ -1,0 +1,7 @@
+.timeframe {
+    padding: 2px;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem !important;
+}

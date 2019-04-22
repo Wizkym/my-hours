@@ -17,6 +17,10 @@ h1 {
     text-align: center;
 }
 
+.start-btn {
+    font-size: 25px;
+}
+
 .task-pane {
      margin-top: 20px;
 }

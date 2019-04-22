@@ -5,13 +5,12 @@
 
 <div class="container">
   <div *ngIf="!isStarted" class="start">
-      <p><a class="btn btn-primary btn-block" 
-        style="font-size: 25px; color: white;"
+      <p><a class="btn btn-outline-info btn-block start-btn"
         role="button" (click)="openFormModal()">Get Started</a></p>
   </div>
 
   <div *ngIf="isStarted" class="task-pane">
-    <h3>The Task Pane is Open</h3>
+    <app-taskpane></app-taskpane>
   </div>
 </div>
 

@@ -1,15 +1,15 @@
 <div class="modal-header">
     <h4 class="modal-title">Trivia Time!</h4>
     <button type="button" class="close" aria-label="Close"
-     (click)="activeModal.dismiss('Cross click')">
+     (click)="activeModal.dismiss('Cross click')">X
     </button>
   </div>
   <form [formGroup]="myForm" (ngSubmit)="submitForm()">
-    <div class="modal-boy">
+    <div class="modal-body">
       <div class="container">
         <div class="form-group">
-          <label for="answer">What is the capital of Kenya?</label>
-          <input type="select" 
+          <label for="answer"><b>What is the capital of Kenya?</b></label>
+          <input type="select"
             class="form-control"
             formControlName="answer" />
         </div>

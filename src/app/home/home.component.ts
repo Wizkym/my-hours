@@ -11,7 +11,7 @@ import { AuthModalComponent } from '../auth-modal/auth-modal.component';
 export class HomeComponent implements OnInit {
   isStarted = false;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit() {
   }
@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
       console.log(result.answer);
       if (result.answer.trim().toLowerCase() === 'nairobi') {
         this.isStarted = true;
+      } else {
+        alert('Oopss.. Try Again!');
       }
     }).catch((error) => {
       console.log(error);

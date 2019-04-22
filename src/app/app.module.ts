@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -10,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { TaskpaneComponent } from './taskpane/taskpane.component';
+import { DetailsComponent } from './taskpane/details/details.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +22,19 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
     NavbarComponent,
     FooterComponent,
     AuthModalComponent,
-    JumbotronComponent
+    JumbotronComponent,
+    TaskpaneComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

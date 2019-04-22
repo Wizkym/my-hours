@@ -1,0 +1,7 @@
+<h1> Create a new task..</h1>
+<hr>
+<button [disabled]="isStarted" class="btn btn-success" (click)="onStartClick()">Start</button>
+
+<div *ngIf="isStarted" class="taskpane">
+  <app-details></app-details>
+</div>
