@@ -14,6 +14,7 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { TaskpaneComponent } from './taskpane/taskpane.component';
 import { DetailsComponent } from './taskpane/details/details.component';
+import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DetailsComponent } from './taskpane/details/details.component';
     JumbotronComponent,
     TaskpaneComponent,
     DetailsComponent,
+    TaskGridComponent,
   ],
   imports: [
     BrowserModule,

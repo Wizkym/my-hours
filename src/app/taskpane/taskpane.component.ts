@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-taskpane',
   templateUrl: './taskpane.component.html',
@@ -15,7 +16,11 @@ export class TaskpaneComponent implements OnInit {
 
   onStartClick() {
     this.isStarted = true;
+  }
 
+  onFormSubmit(form) {
+    this.isStarted = false;
+    console.log(form);
   }
 
 }

@@ -1,4 +1,3 @@
-
 h1 {
     font-family: 'Roboto Mono', monospace;
 }
@@ -12,6 +11,7 @@ h1 {
     height: 40vh;
 }
 
+
 .start {
     margin-top: 25px;
     text-align: center;
@@ -23,4 +23,8 @@ h1 {
 
 .task-pane {
      margin-top: 20px;
+}
+
+.task-grid {
+    margin-top: 50px;
 }

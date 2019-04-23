@@ -5,3 +5,7 @@
     border: 1px solid #ced4da !important;
     border-radius: .25rem !important;
 }
+
+.field-danger {
+    margin-top: 10px;
+}

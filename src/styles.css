@@ -1,2 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~ng-pick-datetime/assets/style/picker.min.css";
+
+/* Sticky footer config */
+html, body {
+    height: 100%;
+}
+
+body { 
+    overflow-x: hidden;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.container {
+    padding-bottom: 150px;
+}
+
+.footer {
+    margin-top: -150px;
+    height: 150px;
+    text-align: center;
+    color: #fff;
+    line-height: 150px;
+    background-color: #242526;
+}

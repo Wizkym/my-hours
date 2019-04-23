@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -7,16 +7,22 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  @Output() form = new EventEmitter 
   myForm: FormGroup;
 
   constructor( private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      name: '',
-      range: '',
-      description: ''
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      range: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required)
     });
+  }
+
+  submitForm() {
+    this.form.emit(this.myForm.value);
   }
 
 }
