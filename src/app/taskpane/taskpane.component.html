@@ -1,6 +1,10 @@
 <h1> Create a new task..</h1>
 <hr>
 <button *ngIf="!isStarted" class="btn btn-info" (click)="onStartClick()">New</button>
+
 <div *ngIf="isStarted" class="taskpane">
-  <app-details (form)="onFormSubmit($event)"></app-details>
+  <app-details (form)="onFormSubmit($event)" (cancel)="isStarted = false"></app-details>
+</div>
+<div *ngIf="!isStarted" class="task-grid">
+    <app-task-grid></app-task-grid>
 </div>

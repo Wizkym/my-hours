@@ -7,7 +7,8 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  @Output() form = new EventEmitter 
+  @Output() form = new EventEmitter;
+  @Output() cancel = new EventEmitter;
   myForm: FormGroup;
 
   constructor( private formBuilder: FormBuilder) {}
@@ -23,6 +24,10 @@ export class DetailsComponent implements OnInit {
 
   submitForm() {
     this.form.emit(this.myForm.value);
+  }
+
+  onCancelClick() {
+    this.cancel.emit();
   }
 
 }
