@@ -15,6 +15,7 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { TaskpaneComponent } from './taskpane/taskpane.component';
 import { DetailsComponent } from './taskpane/details/details.component';
 import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
+import { TaskService } from './taskpane/shared/tasks.service';
 
 @NgModule({
   declarations: [
@@ -35,10 +36,10 @@ import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    OwlDateTimeModule, 
+    OwlDateTimeModule,
     OwlNativeDateTimeModule
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent],
   entryComponents: [
     AuthModalComponent

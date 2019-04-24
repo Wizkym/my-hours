@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DateTimeAdapter } from 'ng-pick-datetime';
-
-
-interface Task {
-  firstName: string,
-  lastName: string,
-  from: string,
-  to: string,
-  description: string
-}
-
-const TASKS: Task[] = [];
+import { Task } from '../shared/task.interface';
+import { TaskService } from '../shared/tasks.service';
 
 @Component({
   selector: 'app-task-grid',
@@ -19,10 +10,11 @@ const TASKS: Task[] = [];
 })
 
 export class TaskGridComponent implements OnInit {
-  tasks = TASKS;
-  constructor() { }
+  tasks: Task[] = [];
+  constructor(private taskSvc: TaskService) { }
 
   ngOnInit() {
+    this.tasks = this.taskSvc.getTasks();
   }
 
 }
