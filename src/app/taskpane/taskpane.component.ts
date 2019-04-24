@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TaskService } from './shared/tasks.service';
 
 @Component({
@@ -12,8 +11,7 @@ export class TaskpaneComponent implements OnInit {
   isStarted = false;
   tasks: string[] = [];
 
-  constructor(private modalService: NgbModal,
-              private taksSvc: TaskService) {}
+  constructor(private taskSvc: TaskService) {}
 
   ngOnInit() {}
 
@@ -21,10 +19,9 @@ export class TaskpaneComponent implements OnInit {
     this.close.emit();
   }
 
-  onFormSubmit(form) {
+  onFormSubmit(task) {
     this.isStarted = false;
-    console.log(form);
-
+    console.log(task);
+    this.taskSvc.TASKS.push(task);
   }
-
 }

@@ -10,6 +10,7 @@ import { AuthModalComponent } from '../auth-modal/auth-modal.component';
 })
 export class HomeComponent implements OnInit {
   isStarted = false;
+  hasAccess = false;
 
   constructor(private modalService: NgbModal) {}
 
@@ -17,17 +18,26 @@ export class HomeComponent implements OnInit {
   }
 
   openFormModal() {
-    const modalRef = this.modalService.open(AuthModalComponent, { centered: true });
-    modalRef.componentInstance.id = 10;
-    modalRef.result.then((result) => {
-      console.log(result.answer);
-      if (result.answer.trim().toLowerCase() === 'nairobi') {
-        this.isStarted = true;
-      } else {
-        alert('Uh..You sure?\nTry Again!');
-      }
-    }).catch((error) => {
-      console.log(error);
-    });
+    if (!this.hasAccess) {
+      const modalRef = this.modalService.open(AuthModalComponent, { centered: true });
+      modalRef.componentInstance.id = 10;
+      modalRef.result.then((result) => {
+        console.log(result.answer);
+        if (result.answer.trim().toLowerCase() === 'nairobi') {
+          this.isStarted = true;
+        } else {
+          alert('Uh..You sure?\nTry Again!');
+        }
+      }).catch((error) => {
+        console.log(error);
+      });
+    } else {
+      this.isStarted = true;
+    }
+  }
+
+  onCloseEmit () {
+    this.isStarted = false;
+    this.hasAccess = true;
   }
 }

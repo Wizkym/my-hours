@@ -1,5 +1,5 @@
 <h2>Current Tasks</h2>
-<div *ngIf="tasks.length > 0" class="tasktable">
+<div *ngIf="tasks.length > 0" class="task-table">
   <table class="table table-striped">
       <thead>
           <tr>
@@ -18,10 +18,14 @@
               <td>{{ task.lastName }}</td>
               <td>{{ task.from }}</td>
               <td>{{ task.to }}</td>
-              <td>{{ task.description }}</td>
+              <td class="desc">{{ task.description }}</td>
           </tr>
       </tbody>
   </table>
+  <div>
+    <button class="btn btn-info fin" (click)="onFinalizeClick()">Finalize</button>
+    <button class="btn btn-danger" (click)="onClearClick()">Clear</button>
+  </div>
 </div>
 <div *ngIf="!tasks.length > 0" class="empty-table">
   <p><i>No tasks added yet...</i>

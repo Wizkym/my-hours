@@ -1,4 +1,15 @@
-table {
+.task-table {
   margin-bottom: 30px;
   padding-bottom: 10px;
+}
+
+.desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
+.fin {
+  margin-right: 5px;
 }

@@ -25,6 +25,6 @@
   </div>
 
   <div *ngIf="isStarted" class="task-pane">
-    <app-taskpane (close)="isStarted = false"></app-taskpane>
+    <app-taskpane (close)="onCloseEmit($event)"></app-taskpane>
   </div>
 </div>
