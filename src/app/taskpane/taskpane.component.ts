@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -8,14 +8,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./taskpane.component.css']
 })
 export class TaskpaneComponent implements OnInit {
+  @Output() close = new EventEmitter;
   isStarted = false
 
   constructor(private modalService: NgbModal) {}
 
   ngOnInit() {}
 
-  onStartClick() {
-    this.isStarted = true;
+  onBackBtnClick() {
+    this.close.emit();
   }
 
   onFormSubmit(form) {

@@ -1,15 +1,30 @@
-<app-navbar></app-navbar>
 <div class="head">
   <app-jumbotron></app-jumbotron>
 </div>
 
 <div class="container">
   <div *ngIf="!isStarted" class="start">
+    <div class="checklist">
+      <h3>Checklist:</h3>
+      <ul>
+        <li>Your notes
+          <span><i class="fas fa-sticky-note listicons"></i></span>
+        </li>
+        <li>Contact list
+          <span><i class="fas fa-address-book listicons"></i></span>
+        </li>
+        <li>Headphones
+          <span><i class="fas fa-headphones listicons"></i></span>
+        </li>
+      </ul>
+    </div>
+    <div>
       <p><a class="btn btn-outline-info btn-block start-btn"
         role="button" (click)="openFormModal()">Get Started</a></p>
+    </div>
   </div>
 
   <div *ngIf="isStarted" class="task-pane">
-    <app-taskpane></app-taskpane>
+    <app-taskpane (close)="isStarted = false"></app-taskpane>
   </div>
 </div>
