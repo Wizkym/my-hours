@@ -10,15 +10,7 @@ interface Task {
   description: string
 }
 
-const TASKS: Task[] = [
-  {
-    firstName: "Josh",
-    lastName: "Outlaw",
-    from: "Tue Apr 16 2019 11:51",
-    to: "Tue Apr 23 2019 11:51",
-    description: "In a world filled with hate, I am the man."
-  }
-];
+const TASKS: Task[] = [];
 
 @Component({
   selector: 'app-task-grid',
