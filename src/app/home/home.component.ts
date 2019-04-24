@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       if (result.answer.trim().toLowerCase() === 'nairobi') {
         this.isStarted = true;
       } else {
-        alert('Oopss.. Try Again!');
+        alert('Uh..You sure?\nTry Again!');
       }
     }).catch((error) => {
       console.log(error);
