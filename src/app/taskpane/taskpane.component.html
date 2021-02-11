@@ -3,11 +3,17 @@
 </div>
 
 <div class="container">
-  <h2>Add New Tasks</h2>
-  <button routerLink="/details" type="button" class="btn btn-info add">New</button>
-  <button routerLink="/home" type="button" class="btn btn-secondary">Back</button>
-
   <div class="task-grid">
     <app-task-grid></app-task-grid>
+    <button routerLink="/details" type="button" class="btn btn-info add">New Task</button>
+    <button class="btn btn-danger" (click)="onClearClick()"
+      [disabled]="!taskSvc.TASKS || taskSvc.TASKS.length < 1">
+      Clear All Tasks
+    </button>
+    <hr/>
+    <h6><a routerLink="/home">
+      <span><i class="fas fa-hand-point-left"></i></span>
+      Back Home
+    </a></h6>
   </div>
 </div>

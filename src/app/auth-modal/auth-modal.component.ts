@@ -17,9 +17,7 @@ export class AuthModalComponent implements OnInit {
               this.createForm();
             }
 
-  ngOnInit() {
-    console.log(this.id);
-  }
+  ngOnInit() { }
 
   private createForm() {
     this.myForm = this.formBuilder.group({

@@ -2,6 +2,15 @@
     margin-top: 20px;
 }
 
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #17a2b8;
+}
+
 .task-grid {
     margin-top: 50px;
 }

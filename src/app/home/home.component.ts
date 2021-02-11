@@ -11,10 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  starterTxt: string;
 
   constructor(private modalService: NgbModal, private taskSvc: TaskService, private router: Router) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.starterTxt = (this.taskSvc.TASKS && this.taskSvc.TASKS.length > 0)
+      ? 'View Tasks' : 'Get Started';
+  }
 
   openFormModal() {
     if (!this.taskSvc.hasAccess) {

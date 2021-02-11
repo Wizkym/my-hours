@@ -20,8 +20,4 @@ export class TaskGridComponent implements OnInit {
   onFinalizeClick() {
     alert('Ima finalize you real good!');
   }
-
-  onClearClick() {
-    this.taskSvc.TASKS.length = 0;
-  }
 }
