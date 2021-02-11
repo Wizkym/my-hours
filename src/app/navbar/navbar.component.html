@@ -1,18 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a routerLink="/" class="navbar-brand"><span><i class="fas fa-business-time nav-ico"></i></span><b>MY-HOURS</b></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+                <a routerLink="/" class="nav-link">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link">Features</a>
+            <li *ngIf="taskSvc.hasAccess" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+                <a routerLink="/details" class="nav-link">New Task</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link">Pricing</a>
+            <li *ngIf="taskSvc.hasAccess" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
+                <a routerLink="/tasks" class="nav-link">View Tasks</a>
             </li>
         </ul>
     </div>
