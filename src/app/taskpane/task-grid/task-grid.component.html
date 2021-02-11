@@ -23,7 +23,7 @@
       </tbody>
   </table>
 </div>
-<div *ngIf="!tasks.length > 0" class="empty-table">
+<div *ngIf="tasks.length === 0" class="empty-table">
   <p><i>No tasks added yet...</i>
     <span><i class="far fa-sad-cry" style="font-size: 1.3em; margin-left: 5px;"></i></span>
   </p>
