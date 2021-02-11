@@ -13,9 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { TaskpaneComponent } from './taskpane/taskpane.component';
-import { DetailsComponent } from './taskpane/details/details.component';
+import { DetailsComponent } from './details/details.component';
 import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
-import { TaskService } from './taskpane/shared/tasks.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { TaskService } from './taskpane/shared/tasks.service';
     OwlDateTimeModule,
     OwlNativeDateTimeModule
   ],
-  providers: [TaskService],
   bootstrap: [AppComponent],
   entryComponents: [
     AuthModalComponent

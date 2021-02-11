@@ -2,6 +2,8 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthModalComponent } from '../auth-modal/auth-modal.component';
+import { TaskService } from '../shared/tasks.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +11,19 @@ import { AuthModalComponent } from '../auth-modal/auth-modal.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isStarted = false;
-  hasAccess = false;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private taskSvc: TaskService, private router: Router) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   openFormModal() {
-    if (!this.hasAccess) {
+    if (!this.taskSvc.hasAccess) {
       const modalRef = this.modalService.open(AuthModalComponent, { centered: true });
       modalRef.componentInstance.id = 10;
       modalRef.result.then((result) => {
-        console.log(result.answer);
         if (result.answer.trim().toLowerCase() === 'nairobi') {
-          this.isStarted = true;
+          this.taskSvc.hasAccess = true;
+          this.router.navigate(['tasks']);
         } else {
           alert('Uh..You sure?\nTry Again!');
         }
@@ -32,12 +31,11 @@ export class HomeComponent implements OnInit {
         console.log(error);
       });
     } else {
-      this.isStarted = true;
+      this.router.navigate(['tasks']);
     }
   }
 
   onCloseEmit () {
-    this.isStarted = false;
-    this.hasAccess = true;
+    this.taskSvc.hasAccess = true;
   }
 }

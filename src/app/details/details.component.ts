@@ -1,5 +1,8 @@
-import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Task } from '../shared/task.interface';
+import { TaskService } from '../shared/tasks.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,11 +10,11 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  @Output() task = new EventEmitter;
-  @Output() cancel = new EventEmitter;
   myForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder) {}
+  constructor( private formBuilder: FormBuilder,
+    private taskSvc: TaskService,
+    private router: Router ) {}
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
@@ -23,18 +26,14 @@ export class DetailsComponent implements OnInit {
   }
 
   submitForm() {
-    const newTask = {
+    const newTask: Task = {
       firstName: this.myForm.value.firstName,
       lastName: this.myForm.value.lastName,
       from: this.myForm.value.range[0].toLocaleString(),
       to: this.myForm.value.range[1].toLocaleString(),
       description: this.myForm.value.description
     }
-    this.task.emit(newTask);
+    this.taskSvc.TASKS.push(newTask);
+    this.router.navigate(['/tasks']);
   }
-
-  onCancelClick() {
-    this.cancel.emit();
-  }
-
 }

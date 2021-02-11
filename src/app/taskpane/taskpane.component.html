@@ -1,11 +1,13 @@
-<h2> Add a new task..</h2>
-<hr>
-<button *ngIf="!isStarted" class="btn btn-info add" (click)="isStarted = true">New</button>
-<button *ngIf="!isStarted" class="btn btn-secondary" (click)="onBackBtnClick()">Back</button>
-
-<div *ngIf="isStarted" class="taskpane">
-  <app-details (task)="onFormSubmit($event)" (cancel)="isStarted = false"></app-details>
+<div class="head">
+  <app-jumbotron></app-jumbotron>
 </div>
-<div *ngIf="!isStarted" class="task-grid">
+
+<div class="container">
+  <h2>Add New Tasks</h2>
+  <button routerLink="/details" type="button" class="btn btn-info add">New</button>
+  <button routerLink="/home" type="button" class="btn btn-secondary">Back</button>
+
+  <div class="task-grid">
     <app-task-grid></app-task-grid>
+  </div>
 </div>

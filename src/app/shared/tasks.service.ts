@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task.interface';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TaskService {
   TASKS: Task[] = [];
-  constructor() {}
+  hasAccess = false;
+
+  constructor() { }
 
   getTasks() {
     return this.TASKS;

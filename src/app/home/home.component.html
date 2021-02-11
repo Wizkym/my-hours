@@ -3,7 +3,7 @@
 </div>
 
 <div class="container">
-  <div *ngIf="!isStarted" class="start">
+  <div class="start">
     <div class="checklist">
       <h3>Checklist:</h3>
       <ul>
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div *ngIf="isStarted" class="task-pane">
+  <!-- <div *ngIf="isStarted" class="task-pane">
     <app-taskpane (close)="onCloseEmit($event)"></app-taskpane>
-  </div>
+  </div> -->
 </div>

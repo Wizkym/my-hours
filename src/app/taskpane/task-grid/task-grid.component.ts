@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DateTimeAdapter } from 'ng-pick-datetime';
-import { Task } from '../shared/task.interface';
-import { TaskService } from '../shared/tasks.service';
+import { Task } from '../../shared/task.interface';
+import { TaskService } from '../../shared/tasks.service';
 
 @Component({
   selector: 'app-task-grid',
@@ -24,5 +24,4 @@ export class TaskGridComponent implements OnInit {
   onClearClick() {
     this.taskSvc.TASKS.length = 0;
   }
-
 }

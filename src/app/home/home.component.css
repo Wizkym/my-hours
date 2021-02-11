@@ -2,15 +2,6 @@ h1 {
     font-family: 'Roboto Mono', monospace;
 }
 
-.head {
-    background:  url(../../assets/images/mailbox.jpg) no-repeat 140% 50%;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    height: 40vh;
-}
-
 .start {
     margin-top: 25px;
     text-align: center;

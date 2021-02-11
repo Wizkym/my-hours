@@ -10,6 +10,19 @@ body {
     overflow-x: hidden;
 }
 
+.head {
+    background:  url(./assets/images/mailbox.jpg) no-repeat 140% 50%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 40vh;
+}
+
+.container {
+    margin-top: 25px;
+}
+
 .wrapper {
     min-height: 100%;
 }
