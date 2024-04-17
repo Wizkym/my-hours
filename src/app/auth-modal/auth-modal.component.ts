@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import {
-  FormGroup,
-  FormBuilder,
+  UntypedFormGroup,
+  UntypedFormBuilder,
   FormControl,
   Validators,
 } from "@angular/forms";
@@ -14,11 +14,11 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class AuthModalComponent {
   @Input() id: number;
-  myForm: FormGroup;
+  myForm: UntypedFormGroup;
 
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) {
     this.createForm();
   }

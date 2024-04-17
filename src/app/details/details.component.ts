@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 import { Task } from '../shared/task.interface';
 import { TaskService } from '../shared/tasks.service';
 import { Router } from '@angular/router';
@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  myForm: FormGroup;
+  myForm: UntypedFormGroup;
 
-  constructor( private formBuilder: FormBuilder,
+  constructor( private formBuilder: UntypedFormBuilder,
     private taskSvc: TaskService,
     private router: Router ) {}
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      range: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      firstName: new UntypedFormControl('', Validators.required),
+      lastName: new UntypedFormControl('', Validators.required),
+      range: new UntypedFormControl('', Validators.required),
+      description: new UntypedFormControl('', Validators.required)
     });
   }
 

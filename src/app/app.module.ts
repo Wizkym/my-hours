@@ -17,30 +17,27 @@ import { DetailsComponent } from './details/details.component';
 import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    AuthModalComponent,
-    JumbotronComponent,
-    TaskpaneComponent,
-    DetailsComponent,
-    TaskGridComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule,
-    NgbModule,
-    OwlDateTimeModule,
-    OwlNativeDateTimeModule
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    AuthModalComponent
-  ]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        NavbarComponent,
+        FooterComponent,
+        AuthModalComponent,
+        JumbotronComponent,
+        TaskpaneComponent,
+        DetailsComponent,
+        TaskGridComponent,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AppRoutingModule,
+        NgbModule,
+        OwlDateTimeModule,
+        OwlNativeDateTimeModule
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
