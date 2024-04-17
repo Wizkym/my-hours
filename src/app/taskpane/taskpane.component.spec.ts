@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TaskpaneComponent } from './taskpane.component';
 
@@ -6,7 +6,7 @@ describe('TaskpaneComponent', () => {
   let component: TaskpaneComponent;
   let fixture: ComponentFixture<TaskpaneComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TaskpaneComponent ]
     })
