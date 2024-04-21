@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DateTimeAdapter } from 'ng-pick-datetime';
 import { Task } from '../../shared/task.interface';
 import { TaskService } from '../../shared/tasks.service';
 

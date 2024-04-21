@@ -20,7 +20,8 @@ export class DetailsComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       firstName: new UntypedFormControl('', Validators.required),
       lastName: new UntypedFormControl('', Validators.required),
-      range: new UntypedFormControl('', Validators.required),
+      startDate: new UntypedFormControl('', Validators.required),
+      endDate: new UntypedFormControl('', Validators.required),
       description: new UntypedFormControl('', Validators.required)
     });
   }
@@ -29,8 +30,8 @@ export class DetailsComponent implements OnInit {
     const newTask: Task = {
       firstName: this.myForm.value.firstName,
       lastName: this.myForm.value.lastName,
-      from: this.myForm.value.range[0].toLocaleString(),
-      to: this.myForm.value.range[1].toLocaleString(),
+      from: this.myForm.value.startDate.toLocaleString(),
+      to: this.myForm.value.endDate.toLocaleString(),
       description: this.myForm.value.description
     }
     this.taskSvc.TASKS.push(newTask);

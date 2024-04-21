@@ -3,8 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { TaskpaneComponent } from './taskpane/taskpane.component';
 import { DetailsComponent } from './details/details.component';
 import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     declarations: [
@@ -35,9 +37,13 @@ import { TaskGridComponent } from './taskpane/task-grid/task-grid.component';
         FormsModule,
         AppRoutingModule,
         NgbModule,
-        OwlDateTimeModule,
-        OwlNativeDateTimeModule
+        MatDatepickerModule,
+        MatFormFieldModule,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+      provideAnimationsAsync('noop'),
+      provideNativeDateAdapter(),
+    ]
 })
 export class AppModule {}

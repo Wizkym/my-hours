@@ -17,3 +17,13 @@
 .myform-btns {
     margin-right: 5px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form > .date-picker {
+    display: block;
+}
